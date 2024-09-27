@@ -24,23 +24,45 @@
       </div>
 
       <!-- Right Side (Image with Morph Effect) -->
-      <div class="image-side">
-        <div class="hero-img"></div>
+      <div class="image-side" ref="heroImg">
+        <div class="hero-img" :style="{ backgroundImage: `url(${bgImage})` }"></div>
       </div>
     </section>
   </div>
 </template>
 
-<style scoped>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+<script>
+export default {
+  data() {
+    return {
+      bgImage: '', // Initially empty
+    };
+  },
+  mounted() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.bgImage = 'https://mapulecodes.github.io/fridayimages/images/mapule.jpg'; // Set the background image
+          observer.disconnect(); // Stop observing after loading
+        }
+      });
+    });
 
+    observer.observe(this.$refs.heroImg); // Start observing the image div
+  },
+};
+</script>
+
+<style scoped>
+/* Your existing styles remain the same */
 .landing-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: white;
-  padding: 20px;
+  min-height: 100vh; 
+  background-color: transparent; 
+  margin: 0; 
+  padding: 0; 
 }
 
 .content {
@@ -55,7 +77,7 @@
 .text-side {
   flex: 1;
   text-align: left;
-  padding: 20px;
+  padding: 20px; 
 }
 
 h1 {
@@ -81,7 +103,7 @@ p {
 }
 
 .social-links a:hover {
-  color: #0077b5; /* LinkedIn Blue */
+  color: #0077b5; 
 }
 
 .actions {
@@ -92,15 +114,20 @@ p {
   padding: 12px 30px;
   margin-right: 15px;
   border-radius: 30px;
-  background: linear-gradient(to right, blue, purple, grey);
-  color: white;
+  background: transparent; 
+  color: black; 
   text-decoration: none;
   font-size: 1.25rem;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, border-radius 0.3s ease; 
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, blue, purple); 
 }
 
 .btn:hover {
-  background: linear-gradient(to left, blue, purple, grey);
+  background: linear-gradient(to left, #ADD8E6, #DDA0DD, #D3D3D3); 
+  color: black; 
+  border-radius: 0; 
 }
 
 .image-side {
@@ -112,7 +139,6 @@ p {
 
 .hero-img {
   animation: morph 8s ease-in-out infinite;
-  background-image: url('https://mapulecodes.github.io/fridayimages/images/mapule.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -142,11 +168,11 @@ p {
   }
 
   .text-side {
-    order: 2; /* Moves text below the image */
+    order: 2; 
   }
 
   .image-side {
-    order: 1; /* Moves image above the text */
+    order: 1; 
     margin-bottom: 20px;
   }
 

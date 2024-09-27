@@ -1,0 +1,131 @@
+[33mcommit cbc6c1b5509e019a0dba04f4b2a93618d64649e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Mapule Mbuzwana <mbuzwanamapule@gmail.com>
+Date:   Wed Sep 18 18:02:58 2024 +0200
+
+    mapule
+
+[1mdiff --git a/src/App.vue b/src/App.vue[m
+[1mindex a753dba..a948a8f 100644[m
+[1m--- a/src/App.vue[m
+[1m+++ b/src/App.vue[m
+[36m@@ -1,30 +1,28 @@[m
+ <template>[m
+[31m-  <nav>[m
+[31m-    <router-link to="/">Home</router-link> |[m
+[31m-    <router-link to="/about">About</router-link>[m
+[31m-  </nav>[m
+[31m-  <router-view/>[m
+[32m+[m[32m  <div class="wrapper">[m
+[32m+[m[32m    <NavBar/>[m
+[32m+[m[32m    <main class="container-fluid">[m
+[32m+[m[32m      <router-view />[m
+[32m+[m[32m          <Footer />[m
+[32m+[m[32m    </main>[m
+[32m+[m[41m  [m
+[32m+[m[32m  </div>[m
+[32m+[m[41m  [m
+ </template>[m
+[32m+[m[32m<script>[m
+[32m+[m[32mimport NavBar from '@/components/NavBar.vue'[m
+[32m+[m[32mimport Footer from '@/components/Footer.vue'[m
+ [m
+[31m-<style>[m
+[31m-#app {[m
+[31m-  font-family: Avenir, Helvetica, Arial, sans-serif;[m
+[31m-  -webkit-font-smoothing: antialiased;[m
+[31m-  -moz-osx-font-smoothing: grayscale;[m
+[31m-  text-align: center;[m
+[31m-  color: #2c3e50;[m
+[31m-}[m
+[32m+[m[32mexport default {[m
+[32m+[m[32m  components: {[m
+[32m+[m[32m    NavBar,[m
+[32m+[m[32m    Footer[m
+ [m
+[31m-nav {[m
+[31m-  padding: 30px;[m
+[31m-}[m
+[32m+[m[41m  [m
+ [m
+[31m-nav a {[m
+[31m-  font-weight: bold;[m
+[31m-  color: #2c3e50;[m
+[31m-}[m
+[32m+[m[32m  }[m
+ [m
+[31m-nav a.router-link-exact-active {[m
+[31m-  color: #42b983;[m
+ }[m
+[31m-</style>[m
+[32m+[m[32m</script>[m
+[32m+[m[32m<style src="@/assets/css/style.css">[m
+[32m+[m[32m</style>[m
+\ No newline at end of file[m
+[1mdiff --git a/src/assets/css/style.css b/src/assets/css/style.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..30e5c05[m
+[1m--- /dev/null[m
+[1m+++ b/src/assets/css/style.css[m
+[36m@@ -0,0 +1,57 @@[m
+[32m+[m[32m@import url('https://fonts.googleapis.com/css2?family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');[m
+[32m+[m
+[32m+[m[32m/* app */[m
+[32m+[m[32m#app {[m
+[32m+[m[32m    font-family: "Wittgenstein", serif;[m
+[32m+[m[32m    -webkit-font-smoothing: antialiased;[m
+[32m+[m[32m    -moz-osx-font-smoothing: grayscale;[m
+[32m+[m[32m    text-align: center;[m
+[32m+[m[32m    color: black;[m
+[32m+[m[32m  }[m
+[32m+[m[41m  [m
+[32m+[m[32m* {[m
+[32m+[m[32m  box-sizing: border-box;[m
+[32m+[m[32m  margin: 0;[m
+[32m+[m[32m  padding: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mhtml {[m
+[32m+[m[32m  font-size: 62.5%; /* 1rem = 10px for easy calculations */[m
+[32m+[m[32m  scroll-behavior: smooth;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbody {[m
+[32m+[m[32m  background-color: #fff;[m
+[32m+[m[32m  font-family: Poppins, sans-serif;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[41m  [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m::-webkit-scrollbar {[m
+[32m+[m[32m  width: 8px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m::-webkit-scrollbar-thumb {[m
+[32m+[m[32m  background-color: #8e8e8e;[m
+[32m+[m[32m  border-radius: 20px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m::-webkit-scrollbar-track {[m
+[32m+[m[32m  background-color: #fff;[m
+[32m+[m[32m  border-radius: 20px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/* Responsive Container */[m
+[32m+[m[32m.container {[m
+[32m+[m[32m  margin: 0 auto;[m
+[32m+[m[32m  max-width: 107rem;[m
+[32m+[m[32m  padding: 0 4rem;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m@media (max-width: 460px) {[m
+[32m+[m[32m  .container {[m
+[32m+[m[32m    padding: 0 1.7rem;[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[41m  [m
+\ No newline at end of file[m
+[1mdiff --git a/src/components/Footer.vue b/src/components/Footer.vue[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3b34444[m
+[1m--- /dev/nul
