@@ -16,16 +16,13 @@
             <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#resume">Resume</a>
+            <a class="nav-link" href="#educationandexperience">Education and Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#project">Project</a>
+            <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#testimonial">Testimonial</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#reachMe">Reach Me</a>
+            <a class="nav-link" href="#ContactMe">Contact Me</a>
           </li>
         </ul>
       </div>
