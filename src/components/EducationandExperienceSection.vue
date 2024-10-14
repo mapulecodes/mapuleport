@@ -14,7 +14,7 @@
           <div class="card-hover">
             <p>
               I attended Bloouberg High School where I developed a strong
-              foundation in mathematics and sciences.
+              foundation in business studies which helped shape my  .
             </p>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default {
         {
           company: "Excellent Services",
           position: "Office Administrator",
-          period: "Feb 2022 – July 2024",
+          period: "Feb 2020 – July 2024",
           description: `
             • Captured client information into the database.\n
             • Responded to telephone and written enquiries.\n

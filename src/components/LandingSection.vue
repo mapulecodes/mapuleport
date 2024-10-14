@@ -87,7 +87,7 @@ h1 {
 
 p {
   font-size: 1.5rem;
-  color: #666;
+  color: black;
   margin-bottom: 30px;
 }
 

@@ -11,11 +11,12 @@
           <a :href="project.githubLink" target="_blank" class="github-icon">
             <i class="fab fa-github"></i>
           </a>
+          <a v-if="project.liveLink" :href="project.liveLink" target="_blank" class="live-link">
+            Live Project
+          </a>
         </div>
       </div>
     </div>
-
-    
   </div>
 </template>
 
@@ -28,14 +29,16 @@ export default {
         {
           title: 'Project One',
           description: 'A brief description of Project One.',
-          image: 'https://via.placeholder.com/300x200',
+          image: 'https://mapulecodes.github.io/fridayimages/images/petshop.png', // New image
           githubLink: 'https://github.com/project-one',
+          liveLink: 'https://node-eomp-62eed.web.app/', // New live link
         },
         {
-          title: 'Project Two',
-          description: 'A brief description of Project Two.',
-          image: 'https://via.placeholder.com/300x200',
-          githubLink: 'https://github.com/project-two',
+          title: 'Salon Inventory',
+          description: 'An inventory management system for salons.',
+          image: 'https://mapulecodes.github.io/fridayimages/images/inventory.png', // Inventory image
+          githubLink: 'https://github.com/mapulecodes/saloninventory.git',
+          liveLink: 'https://saloninventory-2ab75.web.app/',
         },
         {
           title: 'Project Three',
@@ -62,8 +65,6 @@ export default {
           githubLink: 'https://github.com/project-six',
         },
       ],
-      // Skills for the technical skills section
-      skills: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Node.js', 'MySQL', 'Sass'], // Added Sass
     };
   },
 };
@@ -105,7 +106,7 @@ h2 {
 
 .project-image {
   width: 100%;
-  height: 150px; /* Adjusted height for smaller cards */
+  height: 150px;
   object-fit: cover;
 }
 
@@ -123,7 +124,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.github-icon {
+.github-icon, .live-link {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -131,9 +132,15 @@ h2 {
   color: #fff;
 }
 
-.github-icon:hover {
+.github-icon:hover, .live-link:hover {
   color: #ddd;
 }
 
-
+.live-link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
 </style>

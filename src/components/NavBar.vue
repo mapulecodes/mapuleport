@@ -32,7 +32,7 @@
 
 <style scoped>
 .gradient-navbar {
-  background: linear-gradient(to right, blue, purple, #ADD8E6, #DDA0DD, #D3D3D3);
+  background: linear-gradient(to right, #B3E5FC, purple, #ADD8E6, #DDA0DD, #D3D3D3);
 }
 
 .navbar-brand-name {

@@ -18,11 +18,13 @@ const isDarkMode = ref(false)
 const toggleDarkMode = () => {
   isDarkMode.value = !isDarkMode.value
   if (isDarkMode.value) {
-    document.body.style.background = 'linear-gradient(to right, blue, purple, #ADD8E6, #DDA0DD, #D3D3D3)'; // Gradient for dark mode
-    document.body.style.color = '#f0f0f0'; // Light text for dark mode
+    // Dark mode with lighter gradient colors
+    document.body.style.background = 'linear-gradient(to right, #B3E5FC, #CE93D8, #E1BEE7, #E0F7FA)';
+    document.body.style.color = '#f0f0f0';
   } else {
-    document.body.style.backgroundColor = '#ffffff'; // White for light mode
-    document.body.style.color = '#000000'; // Dark text for light mode
+    // Light mode: solid white background
+    document.body.style.background = '#ffffff';
+    document.body.style.color = '#000000';
   }
 }
 </script>
@@ -35,19 +37,20 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  transition: background-color 0.4s, color 0.4s;
+  transition: background 0.4s, color 0.4s;
 }
 
-/* Remove unwanted padding or margins on the landing page */
-.your-landing-page-class {
+/* Remove any possible padding or margins causing issues */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Prevents unintended margins and padding */
 }
 
 /* Repositioned dark mode toggle button styling */
 .toggle-btn {
   position: fixed;
-  bottom: 20px; /* Button at the bottom */
+  bottom: 20px;
   right: 20px;
   background-color: transparent;
   border: none;
@@ -58,10 +61,11 @@ html, body {
 
 /* Increase icon size */
 .moon-icon, .sun-icon {
-  font-size: 36px; /* Adjust the size as needed */
+  font-size: 36px;
 }
 
 .toggle-btn:hover {
   transform: scale(1.2);
 }
 </style>
+
